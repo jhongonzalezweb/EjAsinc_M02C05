@@ -1,32 +1,26 @@
-function sumArray(num) {
+function iniciarTest() {
+    var numeros = []
+    suma = 0;
+    flag = true;
 
-    myArreglo = num
 
-    var total = 0;
+    while (flag == true) {
+        var xxx = prompt("Numero: ")
+        if (!isNaN(xxx)) {
+            numeros.push(parseInt(xxx))
+        } else {
+            flag = false;
+        }
+    }
 
-    myArreglo.forEach(e => {
-        total = parseInt(total) + parseInt(e);
+
+    numeros.forEach(numero => {
+        suma += numero;
     });
 
-    //var fin = rexxx;
-    return total;
-}
+    console.log(suma);
+    document.getElementById("demo").innerHTML = "El resultado de la suma con los numeros que has introducido son: " + suma;
 
-var n1 = prompt("Dime el numero uno: ")
-var n2 = prompt("Dime el numero dos: ")
-var n3 = prompt("Dime el numero tres: ")
-var res = sumArray([n1, n2, n3]);
-
-console.log(res);
-
-// var res = sumArray([10,3,10,4]);
-// console.log(res);
-// var res = sumArray([-5,100]);
-// console.log(res);
-
-
-function revelarRes() {
-
-    document.getElementById("demo").innerHTML = res;
+    return suma;
 
 }
